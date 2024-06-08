@@ -16,8 +16,18 @@ Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
 
+Route::get('/event', function () {
+    return view('feature.event');
+})->name('event');
+
+Route::get('/homepage', function () {
+    return view('homepage');
+})->name('homepage');
+
+
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/homepage', [UserController::class, 'homepage']);
 
 Route::get('/register',[UserController::class,'showRegister']);
 Route::post('/register', [UserController::class, 'register']);
